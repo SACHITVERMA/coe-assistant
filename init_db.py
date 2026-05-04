@@ -101,6 +101,7 @@ def update_database_safely():
             user_query TEXT, 
             bot_response TEXT, 
             timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+             FOREIGN KEY (user_email) REFERENCES users(email) ON DELETE CASCADE 
         )''')
 
         # Import History Table
